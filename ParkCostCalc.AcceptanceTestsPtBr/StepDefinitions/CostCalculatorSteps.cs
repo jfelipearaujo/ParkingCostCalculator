@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 using ParkCostCalc.Core.Specs.Dsl;
 using ParkCostCalc.Core.Specs.Models;
@@ -7,7 +7,7 @@ using ParkingCostCalculator.Specs.Helpers;
 
 using TechTalk.SpecFlow;
 
-namespace ParkCostCalc.Core.Specs.StepDefinitions
+namespace ParkCostCalc.AcceptanceTestsPtBr.StepDefinitions
 {
     [Binding]
     public class CostCalculatorSteps
@@ -21,20 +21,20 @@ namespace ParkCostCalc.Core.Specs.StepDefinitions
             _costCalcDsl = costCalculatorDsl;
         }
 
-        [Given(@"parking lot is (.*)")]
-        public void GivenParkingLotIs(ParkTypeEnum parkingLot)
+        [Given(@"que o estacionamento é (.*)")]
+        public void DadoQueOEstacionamentoEValet(ParkTypeEnum parkingLot)
         {
             _scenarioContext.Add("parkingLot", parkingLot);
         }
 
-        [Given(@"parking duration is (.*)")]
-        public void GivenParkingDuration(string duration)
+        [Given(@"a duração é de (.*)")]
+        public void DadoADuracaoEDe(string duration)
         {
             _scenarioContext.Add("duration", duration);
         }
 
-        [When(@"the cost estimate is calculated")]
-        public void WhenTheCostEstimateIsCalculated()
+        [When(@"o custo for calculado")]
+        public void QuandoOCustoForCalculado()
         {
             _scenarioContext.TryGetValue("duration", out string duration);
             _scenarioContext.TryGetValue("parkingLot", out ParkTypeEnum parkType);
@@ -44,8 +44,8 @@ namespace ParkCostCalc.Core.Specs.StepDefinitions
             _scenarioContext.Add("cost", cost);
         }
 
-        [Then(@"the parking cost should be (.*)")]
-        public void ThenTheParkingCostShouldBe(string expectedCost)
+        [Then(@"o custo deve ser (.*)")]
+        public void EntaoOCustoDeveSer(string expectedCost)
         {
             _scenarioContext.TryGetValue("cost", out decimal cost);
 

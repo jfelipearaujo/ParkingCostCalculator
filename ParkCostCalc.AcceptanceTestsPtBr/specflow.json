@@ -1,0 +1,10 @@
+{
+  "language": {
+    "feature": "pt-br"
+  },
+  "allowDebugGeneratedFiles": true,
+  "livingDocGenerator": {
+    "enabled": true,
+    "filepath": "FeatureData_ptbr.json"
+  }
+}

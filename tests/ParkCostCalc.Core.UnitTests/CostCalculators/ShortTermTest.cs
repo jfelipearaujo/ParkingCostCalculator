@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
+
 using ParkCostCalc.Core.Services.CostCalculators;
-using System;
 
 namespace ParkCostCalc.Core.UnitTests.CostCalculators
 {
@@ -34,6 +34,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(0, cost);
         }
+
         [Test]
         public void Should_Charge_2_Euros_When_ShortTerm_Parking_Time_Is_30_Minutes()
         {
@@ -63,6 +64,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(7, cost);
         }
+
         [Test]
         public void Should_Charge_24_Euros_When_ShortTerm_Parking_Time_Is_12_Hours_30_Minutes()
         {
@@ -72,6 +74,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(24, cost);
         }
+
         [Test]
         public void Should_Charge_25_Euros_When_ShortTerm_Parking_Time_Is_1_Day_30_Minutes()
         {
@@ -81,6 +84,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(25, cost);
         }
+
         [Test]
         public void Should_Charge_26_Euros_When_ShortTerm_Parking_Time_Is_1_Day_1_Hour()
         {
@@ -90,7 +94,5 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(26, cost);
         }
-
-
     }
 }

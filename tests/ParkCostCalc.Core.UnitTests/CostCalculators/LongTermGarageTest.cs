@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
+
 using ParkCostCalc.Core.Services.CostCalculators;
-using System;
 
 namespace ParkCostCalc.Core.UnitTests.CostCalculators
 {
@@ -44,6 +44,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(2, cost);
         }
+
         [Test]
         public void Should_Charge_2_Euros_When_LongTermGarage_Parking_Time_Is_1_Hour()
         {
@@ -53,6 +54,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(2, cost);
         }
+
         [Test]
         public void Should_Charge_6_Euros_When_LongTermGarage_Parking_Time_Is_3_Hours()
         {
@@ -114,7 +116,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(18, cost);
         }
 
-
         [Test]
         public void Should_Charge_24_Euros_When_LongTermGarage_Parking_Time_Is_1_Day_7_Hours()
         {
@@ -124,7 +125,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(24, cost);
         }
-
 
         [Test]
         public void Should_Charge_72_Euros_When_LongTermGarage_Parking_Time_Is_6_Days()
@@ -166,7 +166,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(96, cost);
         }
 
-
         [Test]
         public void Should_Charge_216_Euros_When_LongTermGarage_Parking_Time_Is_3_Weeks()
         {
@@ -176,6 +175,5 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(216, cost);
         }
-
     }
 }

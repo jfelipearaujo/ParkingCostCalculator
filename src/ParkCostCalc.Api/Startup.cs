@@ -5,11 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+
 using ParkCostCalc.Core.Infrastructure;
 using ParkCostCalc.Core.Infrastructure.Repositories;
 using ParkCostCalc.Core.Services;
+
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Rewrite;
 
 namespace ParkCostCalc.Api
 {
@@ -61,7 +62,7 @@ namespace ParkCostCalc.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if(env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }

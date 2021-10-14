@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
+
 using ParkCostCalc.Core.Services.CostCalculators;
-using System;
 
 namespace ParkCostCalc.Core.UnitTests.CostCalculators
 {
-   [TestFixture]
+    [TestFixture]
     public class LongTermSurfaceTest
     {
         private ICostCalc _costCalculator;
@@ -48,7 +48,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
         [Test]
         public void Should_Charge_2_Euros_When_LongTermSurface_Parking_Time_Is_1_Hour()
         {
-            var totalMinutes =  (1 * 60);
+            var totalMinutes = (1 * 60);
 
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
@@ -58,7 +58,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
         [Test]
         public void Should_Charge_10_Euros_When_LongTermSurface_Parking_Time_Is_5_Hours()
         {
-            var totalMinutes =  (5 * 60);
+            var totalMinutes = (5 * 60);
 
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
@@ -84,7 +84,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(10, cost);
         }
-
 
         [Test]
         public void Should_Charge_12_Euros_When_LongTermSurface_Parking_Time_Is_1_Day_1_Hour()
@@ -116,11 +115,10 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(20, cost);
         }
 
-
         [Test]
         public void Should_Charge_60_Euros_When_LongTermSurface_Parking_Time_Is_6_Days()
         {
-            var totalMinutes = (6 * 24 * 60) ;
+            var totalMinutes = (6 * 24 * 60);
 
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
@@ -137,7 +135,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(60, cost);
         }
 
-
         [Test]
         public void Should_Charge_60_Euros_When_LongTermSurface_Parking_Time_Is_7_Days()
         {
@@ -148,17 +145,15 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(60, cost);
         }
 
-
         [Test]
         public void Should_Charge_80_Euros_When_LongTermSurface_Parking_Time_Is_1_Week_2_Days()
         {
-            var totalMinutes = (1* 7 * 24 * 60) + (2 * 24 * 60);
+            var totalMinutes = (1 * 7 * 24 * 60) + (2 * 24 * 60);
 
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
             Assert.AreEqual(80, cost);
         }
-
 
         [Test]
         public void Should_Charge_180_Euros_When_LongTermSurface_Parking_Time_Is_3_Weeks()
@@ -169,7 +164,5 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(180, cost);
         }
-
-
     }
 }

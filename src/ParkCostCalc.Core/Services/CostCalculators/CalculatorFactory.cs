@@ -10,11 +10,10 @@ namespace ParkCostCalc.Core.Services.CostCalculators
             return typeof(T)
                 .Assembly
                 .GetTypes()
-                .Where(type => type.GetInterfaces().Contains(typeof(T)))
-                .Where(type => type.Name.Equals(name))
+                .Where(type => type.GetInterfaces().Contains(typeof(T))
+                    && type.Name.Equals(name))
                 .Select(type => Activator.CreateInstance(type) as T)
                 .SingleOrDefault();
         }
     }
-
 }

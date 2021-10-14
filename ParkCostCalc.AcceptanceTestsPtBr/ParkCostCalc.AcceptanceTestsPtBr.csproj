@@ -22,13 +22,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ParkCostCalc.Core\ParkCostCalc.Core.csproj" />
+    <ProjectReference Include="..\src\ParkCostCalc.Core\ParkCostCalc.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Features\Valet.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </None>
     <None Update="specflow.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <Compile Update="Features\Valet.feature.cs">
+      <Visible>true</Visible>
+      <DependentUpon>%(Filename)</DependentUpon>
+      <DesignTime>true</DesignTime>
+      <AutoGen>true</AutoGen>
+    </Compile>
+  </ItemGroup>
+
 </Project>

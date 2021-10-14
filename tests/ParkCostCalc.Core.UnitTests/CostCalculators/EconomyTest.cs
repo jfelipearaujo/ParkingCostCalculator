@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
+
 using ParkCostCalc.Core.Services.CostCalculators;
-using System;
 
 namespace ParkCostCalc.Core.UnitTests.CostCalculators
 {
@@ -69,7 +69,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
         public void Should_Charge_9_Euros_When_Economy_Parking_Time_Is_5_Hours()
         {
             var totalMinutes = (5 * 60);
-    
+
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
             Assert.AreEqual(9, cost);
@@ -79,7 +79,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
         public void Should_Charge_9_Euros_When_Economy_Parking_Time_Is_6_Hours()
         {
             var totalMinutes = (6 * 60);
-     
+
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
             Assert.AreEqual(9, cost);
@@ -148,7 +148,7 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
         [Test]
         public void Should_Charge_54_Euros_When_Economy_Parking_Time_Is_7_Days()
         {
-            var totalMinutes = (6 * 24 * 60) + (1 * 60);
+            var totalMinutes = (7 * 24 * 60);
 
             var cost = _costCalculator.CalculateCost(totalMinutes);
 
@@ -165,7 +165,6 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
             Assert.AreEqual(72, cost);
         }
 
-
         [Test]
         public void Should_Charge_162_Euros_When_Economy_Parking_Time_Is_3_Weeks()
         {
@@ -175,6 +174,5 @@ namespace ParkCostCalc.Core.UnitTests.CostCalculators
 
             Assert.AreEqual(162, cost);
         }
-
     }
 }

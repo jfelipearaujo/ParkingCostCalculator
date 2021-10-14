@@ -1,5 +1,4 @@
-﻿using ParkCostCalc.Core.Models;
-using System;
+﻿using System;
 
 namespace ParkCostCalc.Core.Services.CostCalculators
 {
@@ -9,7 +8,11 @@ namespace ParkCostCalc.Core.Services.CostCalculators
         {
             decimal totalCost = 0;
             TimeSpan duration = TimeSpan.FromMinutes(totalMinutes);
-            if (totalMinutes <= 0) totalCost = 0;
+
+            if(totalMinutes <= 0)
+            {
+                totalCost = 0;
+            }
             else
             {
                 var totalWeeks = duration.Days / 7;
@@ -23,7 +26,7 @@ namespace ParkCostCalc.Core.Services.CostCalculators
 
                 var daysCost = totalDays * costsPerDay;
 
-                // 23h  * 2 = 46 or max per day = 9
+                // 23h * 2 = 46 or max per day = 9
                 var hoursCost = Math.Min(totalHours * costsPerHour, costsPerDay);
 
                 var daysAndHoursCost = Math.Min(daysCost + hoursCost, costsPerWeek);
@@ -33,6 +36,5 @@ namespace ParkCostCalc.Core.Services.CostCalculators
 
             return totalCost;
         }
-
     }
 }

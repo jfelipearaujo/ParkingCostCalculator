@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-using ParkCostCalc.Core.Models;
-using ParkCostCalc.Core.Specs.Drivers;
+﻿using ParkCostCalc.Core.Models;
 using ParkCostCalc.Core.Specs.Dsl;
-using System;
+
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -19,7 +17,6 @@ namespace ParkCostCalc.Core.Specs.StepDefinitions
         {
             _scenarioContext = scenarioContext;
             _contactDetails = contactDetails;
-            ;
             _contactDsl = contactDsl;
         }
 
@@ -44,9 +41,8 @@ namespace ParkCostCalc.Core.Specs.StepDefinitions
         [Then(@"the email with contact request should be sent to the support team")]
         public void ThenTheEmailWithContactRequestShouldBeSentToTheSupportTeam()
         {
-           // _scenarioContext.TryGetValue("emailSentStatus", out bool emailSentStatus);
-           // Assert.IsTrue(emailSentStatus, "Error during sending email!");
+            // _scenarioContext.TryGetValue("emailSentStatus", out bool emailSentStatus);
+            // Assert.IsTrue(emailSentStatus, "Error during sending email!");
         }
-
     }
 }

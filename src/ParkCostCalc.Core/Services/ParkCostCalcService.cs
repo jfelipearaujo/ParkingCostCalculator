@@ -1,5 +1,6 @@
 using ParkCostCalc.Core.Models;
 using ParkCostCalc.Core.Services.CostCalculators;
+
 using System;
 
 namespace ParkCostCalc.Core.Services
@@ -14,7 +15,9 @@ namespace ParkCostCalc.Core.Services
         public CostDetails CalculateCost(ParkRequest parkRequest)
         {
             var costCalculator = CalculatorFactory.Get<ICostCalc>(parkRequest.ParkType.ToString());
-            if (costCalculator == null) return null;
+
+            if(costCalculator == null)
+                return null;
 
             var totalMinutes = (parkRequest.ExitDate - parkRequest.EntryDate).Value.TotalMinutes;
             var totalCost = costCalculator.CalculateCost(totalMinutes);
