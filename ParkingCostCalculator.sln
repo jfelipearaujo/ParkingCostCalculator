@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A38FD08F-DCE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkCostCalc.AcceptanceTests", "tests\ParkCostCalc.AcceptanceTests\ParkCostCalc.AcceptanceTests.csproj", "{6BB3EA4F-9F89-4E37-A1BD-CD0D7529F013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkCostCalc.AcceptanceTestsPtBr", "ParkCostCalc.AcceptanceTestsPtBr\ParkCostCalc.AcceptanceTestsPtBr.csproj", "{6AD2F4E2-9E2F-46B8-B037-FC2725EDA678}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkCostCalc.AcceptanceTestsPtBr", "tests\ParkCostCalc.AcceptanceTestsPtBr\ParkCostCalc.AcceptanceTestsPtBr.csproj", "{6AD2F4E2-9E2F-46B8-B037-FC2725EDA678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
